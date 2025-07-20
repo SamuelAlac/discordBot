@@ -1,0 +1,34 @@
+{
+  "name": "discordbotniryu",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/SamuelAlac/discordBot#readme",
+  "bugs": {
+    "url": "https://github.com/SamuelAlac/discordBot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuelAlac/discordBot.git"
+  },
+  "license": "ISC",
+  "author": "Samuel Alac",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file=.env index.js",
+    "dev": "node --env-file=.env --watch index.js",
+    "deploy:commands": "node --env-file=.env utility/deploy-commands.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@langchain/core": "^0.3.66",
+    "@langchain/google-genai": "^0.2.15",
+    "discord.js": "^14.21.0",
+    "dotenv": "^16.6.1",
+    "langchain": "^0.3.30"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0"
+  }
+}
