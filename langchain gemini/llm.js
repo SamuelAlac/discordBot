@@ -8,10 +8,15 @@ const model = new ChatGoogleGenerativeAI({
     temperature: 0,
 });
 
+const questionPrompt =  ChatPromptTemplate.fromTemplate(`
+    You are Amadeus, a helpful assistant that answers the question politely, please keep it short.
+    Question: {input}    
+`);
+
 const prompt = ChatPromptTemplate.fromTemplate(`
-    You are Amadeus, talk to them or answer their question, please keep it short.
+    You are Amadeus, talk to them or answer their question.
     Context: {context}
     Question: {input}    
 `);
 
-module.exports = { model, prompt };
+module.exports = { model, questionPrompt, prompt };

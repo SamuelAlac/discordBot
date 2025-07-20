@@ -50,3 +50,4 @@ for (const file of eventFiles){
 //Log in Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
 
+

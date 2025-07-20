@@ -1,3 +1,7 @@
+//Even without predetermined choices, additional restrictions can still be applied on otherwise free input
+//For String options, setMaxLength() and setMinLength() can enforce length limitations
+//For Integer and Number options, setMaxValue() and setMinValue() can enforce range limitations on the value
+//For Channel options, addChannelTypes() can restrict selection to specific channel types, e.g. ChannelType.GuildText
 const { SlashCommandBuilder, ChannelType } = require('discord.js');
 
 module.exports = {
