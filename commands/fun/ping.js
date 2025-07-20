@@ -7,8 +7,8 @@ module.exports = {
     .setDescription('Replies with Pong!'),
 
     async execute (interaction){
-        await interaction.reply('Pong!');
-        await interaction.user.send('noob'); // dms the user lol
+        await interaction.reply(`Ping : ${Date.now() - interaction.createdTimestamp}.\nLatency : ${Math.round(interaction.client.ws.ping)}ms.`);
+        await interaction.user.send('nice wifi lol'); // dms the user lol
     },
 };
 

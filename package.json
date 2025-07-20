@@ -1,5 +1,5 @@
 {
-  "name": "discordbotniryu",
+  "name": "discordbot",
   "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/SamuelAlac/discordBot#readme",
@@ -21,8 +21,11 @@
   },
   "keywords": [],
   "dependencies": {
+    "@langchain/cohere": "^0.3.4",
+    "@langchain/community": "^0.3.49",
     "@langchain/core": "^0.3.66",
     "@langchain/google-genai": "^0.2.15",
+    "cheerio": "^1.1.0",
     "discord.js": "^14.21.0",
     "dotenv": "^16.6.1",
     "langchain": "^0.3.30"

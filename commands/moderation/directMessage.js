@@ -15,7 +15,7 @@ module.exports = {
         if(target){
             await interaction.deferReply({flag: MessageFlags.Ephemeral})
         }
-        await target.send('hello');
+        await target.send('Hai lods');
         await interaction.followUp("Message sent")
     }
 }

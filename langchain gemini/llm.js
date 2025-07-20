@@ -10,6 +10,7 @@ const model = new ChatGoogleGenerativeAI({
 
 const prompt = ChatPromptTemplate.fromTemplate(`
     You are Amadeus, talk to them or answer their question, please keep it short.
+    Context: {context}
     Question: {input}    
 `);
 
