@@ -8,6 +8,7 @@ const commands = [];
 const foldersPath = path.join(__dirname, '..' ,'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
+//Runs all the command files from the command directory
 for (const folder of commandFolders) {
 	// Grab all the command files from the commands directory you created earlier
 	const commandsPath = path.join(foldersPath, folder);
@@ -37,7 +38,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
         // Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID) 
         // = These commands are only available in the specified guild (server). 
         const data = await rest.put(
-            Routes.applicationCommands(process.env.CLIENT_ID),
+            Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
             {
                 body: commands,
             },

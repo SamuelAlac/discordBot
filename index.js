@@ -11,6 +11,7 @@ const client = new Client({
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
+//Runs all the command files from the command directory
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
@@ -33,6 +34,7 @@ for (const folder of commandFolders){
     }
 };
 
+//Runs all the event files from the event directory
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('js'));
 

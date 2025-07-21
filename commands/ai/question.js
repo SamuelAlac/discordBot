@@ -15,13 +15,14 @@ module.exports = {
 
         const userInput = interaction.options.getString('input')
 
+        await interaction.deferReply({ ephemeral: false });
+
         const chain = questionPrompt.pipe(model);
         const response = await chain.invoke({
             input: userInput,
         });
 
-        await interaction.reply(response);
-        // await interaction.deferReply({ ephemeral: false });
-        // await interaction.followUp(response.content);
+        // await interaction.reply(response);
+        await interaction.followUp(response.content);
     }
 };

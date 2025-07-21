@@ -4,16 +4,27 @@ const { Events, MessageFlags, Collection } = require('discord.js');
 module.exports = {
     name: Events.InteractionCreate,
     async execute(interaction){
+
+    if(interaction.isAutocomplete()){
+        const command = interaction.client.commands.get(interaction.commandName);
+
+        if(!command){
+            console.log(`No command matching ${interaction.commandName} was found.`);
+            return;
+        }
+
+        try{
+            await command.autocomplete(interaction);
+        }catch(err){
+            console.log(err);
+        }
+    }
+
     if(!interaction.isChatInputCommand()){
         return;
     }
-    
-    const command = interaction.client.commands.get(interaction.commandName);
 
-    if(!command){
-        console.log(`No command matching ${interaction.commandName} was found.`);
-        return;
-    }
+    const command = interaction.client.commands.get(interaction.commandName);
 
     const { cooldowns } = interaction.client;
     if(!cooldowns.has(command.data.name)){
