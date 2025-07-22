@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { model, questionPrompt } = require('../../langchain gemini/llm');
+const { model, questionPrompt } = require('../../langchain-gemini/llm');
 
 module.exports = {
     cooldown: 5,

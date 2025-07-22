@@ -9,14 +9,19 @@ const model = new ChatGoogleGenerativeAI({
 });
 
 const questionPrompt =  ChatPromptTemplate.fromTemplate(`
-    You are Amadeus, a helpful assistant that answers the question politely, please keep it short.
+    You are Amadeus, a helpful assistant that answers question.
     Question: {input}    
 `);
 
+const orderPrompt = ChatPromptTemplate.fromMessages([
+    ['system', 'Extract all orders from the user input as JSON, formatting instruction: {format_instructions}'],
+    ['user', '{order}']
+])
+
 const prompt = ChatPromptTemplate.fromTemplate(`
-    You are Amadeus, talk to them or answer their question.
+    You are Amadeus, a helpful assistant that answers the question.
     Context: {context}
     Question: {input}    
 `);
 
-module.exports = { model, questionPrompt, prompt };
+module.exports = { model, questionPrompt, orderPrompt ,prompt };

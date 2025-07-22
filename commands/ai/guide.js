@@ -7,7 +7,7 @@
 //For example, to only display options starting with the focused value you can use the Array#filter()
 //then using Array#map(), you can transform the array into an array of ApplicationCommandOptionChoiceData objects.
 const { SlashCommandBuilder } = require('discord.js');
-const { questionPrompt, model } = require('../../langchain gemini/llm');
+const { questionPrompt, model } = require('../../langchain-gemini/llm');
 
 module.exports = {
     cooldown: 5,

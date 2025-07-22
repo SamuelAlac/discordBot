@@ -1,6 +1,6 @@
-const { createChain } = require('../../langchain gemini/chain');
+const { createChain } = require('../../langchain-gemini/chain');
 const { SlashCommandBuilder } = require('discord.js');
-const { model, prompt } = require('../../langchain gemini/llm');
+const { model, prompt } = require('../../langchain-gemini/llm');
 const { CheerioWebBaseLoader } = require('@langchain/community/document_loaders/web/cheerio');
 const { RecursiveCharacterTextSplitter } = require('langchain/text_splitter');
 const { CohereEmbeddings } = require('@langchain/cohere');
