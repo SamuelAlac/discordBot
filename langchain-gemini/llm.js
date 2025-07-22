@@ -16,7 +16,13 @@ const questionPrompt =  ChatPromptTemplate.fromTemplate(`
 const orderPrompt = ChatPromptTemplate.fromMessages([
     ['system', 'Extract all orders from the user input as JSON, formatting instruction: {format_instructions}'],
     ['user', '{order}']
-])
+]);
+
+const weatherPrompt = ChatPromptTemplate.fromMessages([
+    ['system', `Based on the given input in the weather condition in the {country}, give your best advice to help them
+     keep it up to 2 - 3 sentences`],
+    ['user', '{input}'],
+]);
 
 const prompt = ChatPromptTemplate.fromTemplate(`
     You are Amadeus, a helpful assistant that answers the question.
@@ -24,4 +30,4 @@ const prompt = ChatPromptTemplate.fromTemplate(`
     Question: {input}    
 `);
 
-module.exports = { model, questionPrompt, orderPrompt ,prompt };
+module.exports = { model, questionPrompt, orderPrompt, weatherPrompt ,prompt };

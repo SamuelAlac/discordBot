@@ -12,6 +12,7 @@ module.exports = {
         await interaction.deferReply({ ephemeral: false });
 
         const catURL = await fetchCatData();
+        console.log(catURL);
 
         await interaction.followUp({
             content: "Here's a cat image to brighten your day 💕🐾",
