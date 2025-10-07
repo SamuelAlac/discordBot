@@ -17,7 +17,7 @@ module.exports = {
             const chain = weatherPrompt.pipe(model);
             const response = await chain.invoke({
                 country: weather?.location?.country,
-                input: weather?.current?.condition?.text,
+                word: weather?.current?.condition?.text,
             });
 
             await interaction.followUp({

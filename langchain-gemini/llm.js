@@ -9,8 +9,8 @@ const model = new ChatGoogleGenerativeAI({
 });
 
 const questionPrompt =  ChatPromptTemplate.fromTemplate(`
-    You are Amadeus, a helpful assistant that answers question.
-    Question: {input}    
+    You are Amadeus, a helpful assistant that answers question, your answer should not exceed 5 sentences.
+    Question: {input}
 `);
 
 const orderPrompt = ChatPromptTemplate.fromMessages([
@@ -21,11 +21,11 @@ const orderPrompt = ChatPromptTemplate.fromMessages([
 const weatherPrompt = ChatPromptTemplate.fromMessages([
     ['system', `Based on the given input in the weather condition in the {country}, give your best advice to help them
      keep it up to 2 - 3 sentences`],
-    ['user', '{input}'],
+    ['user', '{word}'],
 ]);
 
 const prompt = ChatPromptTemplate.fromTemplate(`
-    You are Amadeus, a helpful assistant that answers the question.
+    You are Amadeus, a helpful assistant that answers the question. your answer should not exceed 5 sentences.
     Context: {context}
     Question: {input}    
 `);
